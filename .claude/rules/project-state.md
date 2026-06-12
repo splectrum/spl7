@@ -26,7 +26,17 @@ Previous repos (spl5, spl6) available as read-only references.
 - P2P primitives: all proven under Bare (isomorphic-git, Hyperswarm,
   protomux, Hyperdrive, reactive dataflow)
 
+## Master data view (2026-06-12)
+
+Node tree structure designed — six top-level folders: `packages`,
+`modules`, `components`, `config`, `home`, `swarm`. Design doc at
+`plan/master-data-view.md`. This is the runtime layout for a swarm
+node (container or host OS). The `swarm` folder carries the full
+swarm data view. All nodes start from the same structure; POC platform
+node populates, additional nodes get sparse copies.
+
 ## Next up
 
-1. Design the master data view tree structure (the template)
-2. Mycelium POC: navigation + git operations on the P2P substrate
+1. POC template instance — create the six-folder tree to work with
+2. XPath/URI navigation POC on the template instance
+3. Git operations POC (isomorphic-git on Hyperdrive)

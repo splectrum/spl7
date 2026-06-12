@@ -8,12 +8,15 @@ Status: ⬜ pending · 🔄 in progress · ✅ done (drop when stale).
 
 ## In progress
 
-- 🔄 **spl7 setup.** Coordination repo, references, plan.
+- 🔄 **Master data view design.** Tree structure settled (six-folder
+  template). Design doc at `plan/master-data-view.md`. Next: create POC
+  template instance to work with and evolve.
+
+## Done
+
+- ✅ **spl7 setup.** Coordination repo, references, plan.
 
 ## Queued
-
-- ⬜ **Master data view design.** The tree structure template for the swarm
-  data view — namespace layout, metadata mounts, runtime folders.
 - ⬜ **XPath/URI navigation POC.** Implement navigation with the settled
   naming scheme on the Mycelium workspace. Pointer records, always-array.
 - ⬜ **Git operations POC.** isomorphic-git on Hyperdrive — commit, push.
