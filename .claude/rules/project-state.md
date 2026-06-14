@@ -35,8 +35,28 @@ node (container or host OS). The `swarm` folder carries the full
 swarm data view. All nodes start from the same structure; POC platform
 node populates, additional nodes get sparse copies.
 
+## Mycelium POC on the swarm (2026-06-14)
+
+Three phases proven in `p2p-docker-dev/spl7-phase-{1,2,3}`:
+
+1. **Tree structure (phase 1)** — platform node seeds the six-folder master
+   data view on Hyperdrive; joining node replicates sparsely. Browser UI
+   with node switcher for testing.
+2. **Mycelium on Hyperdrive (phase 2)** — Hyperdrive-fs adapter maps
+   isomorphic-git's fs surface onto Hyperdrive v11. Mycelium's
+   select/get/put/remove + git commit all work on the replicated drive.
+   Three visibility modes (raw/data/metadata) proven on both nodes.
+3. **Instance fork (phase 3)** — joining node forks the platform's tree
+   into its own writable Hyperdrive with independent git history. The
+   Hyperdrive IS the .git — git objects stored as drive entries.
+
+Key architectural finding: Hyperdrive's sparse replication gives finer
+sparsity than git natively offers. Even tree entries (the Hyperbee B-tree
+index nodes) are fetched on demand — a node only downloads the index
+entries for the paths it accesses.
+
 ## Next up
 
-1. POC template instance — create the six-folder tree to work with
-2. XPath/URI navigation POC on the template instance
-3. Git operations POC (isomorphic-git on Hyperdrive)
+1. Instance replication (phase 4) — node's instance drive visible to
+   other peers on the swarm
+2. Swarm data view — the `swarm/` folder populated with node entries
